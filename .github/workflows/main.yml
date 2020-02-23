@@ -20,11 +20,11 @@ jobs:
          
     - uses: nuget/setup-nuget@v1
       with:
-        # nuget-api-key: ${{ secrets.NUGET_API_KEY }}
+        nuget-api-key: ${{ secrets.NUGET_API_KEY }}
         nuget-version: 'latest'
     
     - name: Push package to the Github Package Registry
       run: |
         nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/kth-me/index.json" -UserName kth-me -Password ${{ secrets.GITHUB_TOKEN }}
-        # nuget setApiKey ${{ secrets.NUGET_API_KEY }} -Source "GitHub"
+        nuget setApiKey ${{ secrets.NUGET_API_KEY }} -Source "GitHub"
         nuget push GitPipelines/bin/Release/*.nupkg -Source "GitHub" -SkipDuplicate
