@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>GitPipeliens</PackageId>
+    <Version>1.0.0.*</Version>
+    <Authors>Justin Branson</Authors>
+    <Company>kth-me</Company>
+    <PackageDescription>This package allows to generate yaml based pipelines!</PackageDescription>
+    <RepositoryUrl>https://github.com/kth-me/GitPipelines</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
