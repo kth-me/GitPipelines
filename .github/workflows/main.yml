@@ -27,4 +27,4 @@ jobs:
       run: |
         nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/kth-me/index.json" -UserName kth-me -Password ${{ secrets.GITHUB_TOKEN }}
         nuget setApiKey ${{ secrets.NUGET_API_KEY }} -Source "GitHub"
-        nuget push **.nupkg -Source "GitHub" -SkipDuplicate
+        nuget push bin/Release/*.nupkg -Source "GitHub" -SkipDuplicate
