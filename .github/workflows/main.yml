@@ -7,7 +7,23 @@ env:
   GITHUB_PACKAGES_TOKEN : ${{ secrets.GITHUB_PACKAGES_TOKEN }}
   GITHUB_PACKAGES_USER : ${{ secrets.GITHUB_PACKAGES_USER }}
 jobs:
-  build:
+  build_and_test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - name: Build with dotnet
+      run: |
+        dotnet restore --configfile nuget.config
+        dotnet build --configuration Release
+        dotnet test
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,12 +35,10 @@ jobs:
       run: |
         dotnet build --configuration Release
         dotnet pack  --configuration Release
-         
     - uses: nuget/setup-nuget@v1
       with:
         nuget-api-key: ${{ secrets.NUGET_API_KEY }}
         nuget-version: 'latest'
-    
     - name: Push package to the Github Package Registry
       run: |
         nuget setApiKey ${{ secrets.NUGET_API_KEY }} -Source "GitHub"
