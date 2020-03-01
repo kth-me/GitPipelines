@@ -11,9 +11,9 @@ The in progress:
 Table1: Git Pricing
 
 | Git Repo      |Free Available | Pricing url  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| ----- |
 | AWS CodeCommit |  |  |
 | Azure Devops   |  |  |
 | BitBucket      |  |  |
-| GitHub         | yes |  |
-| GitLab         | yes |  |
+| GitHub         | yes | https://github.com/pricing |
+| GitLab         | yes | https://about.gitlab.com/pricing/ |
