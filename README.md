@@ -15,5 +15,5 @@ Table1: Git Pricing
 | AWS CodeCommit |  |  |
 | Azure Devops   |  |  |
 | BitBucket      |  |  |
-| GitHub         | yes |  |
-| GitLab         | yes |  |
+| GitHub         | yes | https://github.com/pricing |
+| GitLab         | yes | https://about.gitlab.com/pricing/ |
