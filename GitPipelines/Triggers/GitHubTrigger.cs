@@ -5,7 +5,8 @@ using System.Text;
   
 namespace GitPipelines.Triggers
 {using GitPipelines.Interface;
-    class GitHubTrigger : ITrigger
+    public class GitHubTrigger : ITrigger
     {
+        public List<string> Branches { get; set; }
     }
 }

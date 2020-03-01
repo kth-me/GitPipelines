@@ -4,9 +4,9 @@ using System.Text;
 
 namespace GitPipelines.Job
 {
-    public class BitBucketJob : IJob
+    public class GitHubJob : IJob
     {
-        public BitBucketJob(IJob value)
+        public GitHubJob(IJob value)
         {
         }
     }
