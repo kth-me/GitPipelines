@@ -1,10 +1,11 @@
 name: Package Into Nuget Library
-
 on: 
   push:
     branches:
       - master
-
+env: 
+  GITHUB_PACKAGES_TOKEN : ${{ secrets.GITHUB_PACKAGES_TOKEN }}
+  GITHUB_PACKAGES_USER : ${{ secrets.GITHUB_PACKAGES_USER }}
 jobs:
   build:
     runs-on: ubuntu-latest
