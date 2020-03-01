@@ -11,18 +11,14 @@ namespace GitPipelines
     public class GitHubPipeline : IPipeline
     {
         string name;
-        List<string> on { get; set; }
-        private static readonly string[] triggers = { "commit", "fork", "pull", "push"};
-        
+        List<ITrigger> on { get; set; }
+         
         public Dictionary<string, IJob> Jobs { get; set; }
 
 
         public GitHubPipeline(Pipeline pipeline)
         {
-            foreach (var trigger in pipeline.triggers)
-            {
-               on.Add(triggers[(int)trigger]);
-            }
+            
 
             foreach (var job in pipeline.Jobs)
             {
