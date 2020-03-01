@@ -28,4 +28,4 @@ jobs:
     - name: Push package to the Github Package Registry
       run: |
         nuget setApiKey ${{ secrets.NUGET_API_KEY }} -Source "GitHub"
-        nuget push bin/Release/*.nupkg -Source "GitHub" -SkipDuplicate
+        nuget push ../bin/Release/*.nupkg -Source "GitHub" -SkipDuplicate
