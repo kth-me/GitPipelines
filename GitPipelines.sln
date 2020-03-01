@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitPipelines", "GitPipelines\GitPipelines.csproj", "{5DFBD101-59AB-4CB1-B20B-37AA17308A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelinesTesting", "PipelinesTesting\PipelinesTesting.csproj", "{8DD16C66-3FCC-4AA1-9460-03EF475D4C23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PipelinesTesting", "PipelinesTesting\PipelinesTesting.csproj", "{8DD16C66-3FCC-4AA1-9460-03EF475D4C23}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5DFBD101-59AB-4CB1-B20B-37AA17308A50} = {5DFBD101-59AB-4CB1-B20B-37AA17308A50}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{302CA168-C5BC-4266-982D-CFC42A97A13F}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
 	EndProjectSection
 EndProject
 Global

@@ -1,7 +1,9 @@
-using NUnit.Framework;
 
 namespace PipelinesTesting
 {
+    using NUnit.Framework;
+    using GitPipelines;
+
     public class Tests
     {
         [SetUp]
@@ -12,7 +14,7 @@ namespace PipelinesTesting
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var testPipeline = new Pipeline();
         }
     }
 }
