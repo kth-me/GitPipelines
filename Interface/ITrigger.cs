@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GitPipelines.Interface
 {
-    class ITrigger
+    public interface ITrigger
     {
     }
 }
