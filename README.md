@@ -1,6 +1,8 @@
 ## About GitPipelines
 Git-Pipelines is a .Net Nuget tool designed to create universal Continous Integration for numerous CI/CD platforms.
 
+<a href="https://github.com/kth-me/Evil.bot/actions"><img src="https://img.shields.io/github/workflow/status/kth-me/GitPipelines/main" alt="Workflow Status"></a>
+
 The in progress:
 - GitLab
 - GitHub
@@ -11,7 +13,7 @@ The in progress:
 Table 1: Unit Testing
 | Git Repo | Windows-Latest | Ubuntu-Latest | Macos-Latest |
 | ------------- |-------------| ----- |----- |
-| Azure |  |  |  |
+| Azure | |  |  |
 | GitHub |  |  |  |
 
 
