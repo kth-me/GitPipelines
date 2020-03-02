@@ -17,7 +17,7 @@ namespace GitPipelines.Jobs
         public GitHubJob(Job value)
         {
             RunsOn = value.Image;
-            Strategy = new Strategy();
+            strategy = new Strategy();
             env = value.environmentVariables;
         }
     }
