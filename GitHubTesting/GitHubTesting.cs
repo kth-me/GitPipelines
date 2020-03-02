@@ -17,7 +17,7 @@ namespace PipelinesTesting
         }
 
         [Test]
-        public void Test1()
+        public void GitHubBuildable()
         {
             var pipeline = new Pipeline();
             pipeline.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${{ secrets.GITHUB_PACKAGES_TOKEN }}");
