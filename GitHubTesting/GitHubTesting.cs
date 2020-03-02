@@ -20,8 +20,8 @@ namespace PipelinesTesting
         public void Test1()
         {
             var pipeline = new Pipeline();
-            pipeline.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${ { secrets.GITHUB_PACKAGES_TOKEN } }");
-            pipeline.environmentVariables.Add("GITHUB_PACKAGES_USER", "${ { secrets.GITHUB_PACKAGES_USER } }");
+            pipeline.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${{ secrets.GITHUB_PACKAGES_TOKEN }}");
+            pipeline.environmentVariables.Add("GITHUB_PACKAGES_USER", "${{ secrets.GITHUB_PACKAGES_USER }}");
             
             var restore = new Job
             {
@@ -32,8 +32,8 @@ namespace PipelinesTesting
             {
                 Image = "${{ matrix.os }}"
             };
-            build.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${ { secrets.GITHUB_PACKAGES_TOKEN } }");
-            build.environmentVariables.Add("GITHUB_PACKAGES_USER", "${ { secrets.GITHUB_PACKAGES_USER } }");
+            build.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${{ secrets.GITHUB_PACKAGES_TOKEN }}");
+            build.environmentVariables.Add("GITHUB_PACKAGES_USER", "${{ secrets.GITHUB_PACKAGES_USER }}");
             
             pipeline.Jobs.Add("Restore",restore);
             pipeline.Jobs.Add("Build", build);
