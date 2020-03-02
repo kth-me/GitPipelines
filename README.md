@@ -1,6 +1,8 @@
 ## About GitPipelines
 Git-Pipelines is a .Net Nuget tool designed to create universal Continous Integration for numerous CI/CD platforms.
 
+<a href="https://github.com/kth-me/GitPipelines/actions"><img src="https://img.shields.io/github/workflow/status/kth-me/GitPipelines/main" alt="Workflow Status"></a>
+
 The in progress:
 - GitLab
 - GitHub
@@ -8,7 +10,14 @@ The in progress:
 - Azure Devops
 - AWS CodeCommit
 
-Table1: Git Pricing
+Table 1: Unit Testing
+| Git Repo | Windows-Latest | Ubuntu-Latest | Macos-Latest |
+| ------------- |-------------| ----- |----- |
+| Azure |pass|pass|pass|
+| GitHub |pass|pass|pass|
+
+
+Table 2: Git Pricing
 
 | Git Repo      |Free Available | Pricing url  |
 | ------------- |:-------------:| ----- |
