@@ -11,12 +11,14 @@ namespace GitPipelines.Jobs
         public Strategy strategy { get; set; }
         
         // needs to be runs-on
+        [YamlMember(Alias ="runs-on")]
         public string RunsOn { get; set; }
-        
+
         /// <summary>
         /// List of other job's by key that has to be completed before this job runs.
         /// </summary>
-        public List<string> needs { get; set; }
+        [YamlMember(Alias ="needs")]
+        public List<string> Needs { get; set; }
 
         public Dictionary<string, string> env;
 
@@ -25,7 +27,7 @@ namespace GitPipelines.Jobs
             RunsOn = value.Image;
             strategy = new Strategy();
             env = value.environmentVariables;
-            needs = new List<string>();
+            Needs = new List<string>();
         }
 
         public void clear()
@@ -35,9 +37,9 @@ namespace GitPipelines.Jobs
                 strategy = null;
             }
 
-            if (needs.Count == 0)
+            if (Needs.Count == 0)
             {
-                needs = null;
+                Needs = null;
             }
 
             if (env.Count == 0)
