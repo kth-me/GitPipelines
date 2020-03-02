@@ -10,7 +10,9 @@ namespace GitPipelines.Interfaces
         /// We want this to be static so numerous instances references the 1 serializer.
         /// This will reduce the over head of spinning one up each time it's called.
         /// </summary>
-        private static readonly ISerializer YamlSerializer = new Serializer();
+        private static readonly ISerializer YamlSerializer = new SerializerBuilder()
+            .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
+            .Build();
 
         /// <summary>
         /// Converts Pipeline interface/object into executable YAML.
