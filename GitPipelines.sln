@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitPipelines", "GitPipelines\GitPipelines.csproj", "{5DFBD101-59AB-4CB1-B20B-37AA17308A50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PipelinesTesting", "PipelinesTesting\PipelinesTesting.csproj", "{8DD16C66-3FCC-4AA1-9460-03EF475D4C23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubTesting", "PipelinesTesting\GitHubTesting.csproj", "{8DD16C66-3FCC-4AA1-9460-03EF475D4C23}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5DFBD101-59AB-4CB1-B20B-37AA17308A50} = {5DFBD101-59AB-4CB1-B20B-37AA17308A50}
 	EndProjectSection
