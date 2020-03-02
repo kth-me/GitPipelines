@@ -5,20 +5,18 @@ Git-Pipelines is a .Net Nuget tool designed to create universal Continous Integr
 
 The in progress:
 - GitLab
-- GitHub
-- BitBucket
-- Azure Devops
-- AWS CodeCommit
 
 Table 1: Unit Testing
 | Git Repo | Windows-Latest | Ubuntu-Latest | Macos-Latest |
 | ------------- |-------------| ----- |----- |
-| Azure |pass|pass|pass|
-| GitHub |pass|pass|pass|
+| AWS CodeCommit ||||
+| Azure Devops ||||
+| BitBucket ||||
+| GitHub ||||
+| GitLab ||||
 
 
 Table 2: Git Pricing
-
 | Git Repo      |Free Available | Pricing url  |
 | ------------- |:-------------:| ----- |
 | AWS CodeCommit |  |  |
