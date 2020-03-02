@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 
 namespace GitPipelines.Jobs
@@ -21,9 +22,9 @@ namespace GitPipelines.Jobs
         /// <summary>
         /// Special multi-line formatting.
         /// Uses has to be null if this isn't.
-        /// TODO Needs to use | on multi-line
+        /// Scalar Style allows the correct formatting for github.
         /// </summary>
-        [YamlMember(Alias = "run")]
+        [YamlMember(Alias = "run",ScalarStyle = ScalarStyle.Literal)]
         public string Run;
 
         /// <summary>
