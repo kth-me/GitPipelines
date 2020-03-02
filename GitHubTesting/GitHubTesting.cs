@@ -20,8 +20,8 @@ namespace PipelinesTesting
         public void GitHubBuildable()
         {
             var pipeline = new Pipeline();
-            pipeline.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${{ secrets.GITHUB_PACKAGES_TOKEN }}");
-            pipeline.environmentVariables.Add("GITHUB_PACKAGES_USER", "${{ secrets.GITHUB_PACKAGES_USER }}");
+            pipeline.EnvironmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${{ secrets.GITHUB_PACKAGES_TOKEN }}");
+            pipeline.EnvironmentVariables.Add("GITHUB_PACKAGES_USER", "${{ secrets.GITHUB_PACKAGES_USER }}");
             
             var restore = new Job
             {
@@ -39,15 +39,15 @@ namespace PipelinesTesting
             pipeline.Jobs.Add("Build", build);
             
             var github = pipeline.GitHubPipeline();
-            github.name = "dotnetcore";
-            var f = github.jobs["Build"];
+            github.Name = "dotnetcore";
+            var f = github.Jobs["Build"];
             f.Needs.Add("Restore");
             var os = new List<string>();
             os.Add("ubuntu-latest");
             os.Add("windows-latest");
             os.Add("macos-latest");
-            f.strategy.matrix.Add("os",os);
-            github.clear();
+            f.Strategy.matrix.Add("os",os);
+            github.Clear();
             Console.WriteLine(github.ToYaml());
             Console.WriteLine(github.ToJson());
         }
