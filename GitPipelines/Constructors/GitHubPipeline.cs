@@ -27,6 +27,14 @@ namespace GitPipelines.Constructors
             {
                 jobs.Add(job.Key,new GitHubJob(job.Value));
             }
-        }        
+        }
+
+        public void clear()
+        {
+            foreach (var job in jobs)
+            {
+                job.Value.clear();
+            }
+        }
     }
 }
