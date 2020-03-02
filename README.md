@@ -13,8 +13,8 @@ The in progress:
 Table 1: Unit Testing
 | Git Repo | Windows-Latest | Ubuntu-Latest | Macos-Latest |
 | ------------- |-------------| ----- |----- |
-| Azure | |  |  |
-| GitHub |  |  |  |
+| Azure |pass|pass|pass|
+| GitHub |pass|pass|pass|
 
 
 Table 2: Git Pricing
