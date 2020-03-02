@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        test: [PipelinesTesting]
+        test: [GitHubTesting]
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
