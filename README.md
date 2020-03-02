@@ -8,7 +8,14 @@ The in progress:
 - Azure Devops
 - AWS CodeCommit
 
-Table1: Git Pricing
+Table 1: Unit Testing
+| Git Repo | Windows-Latest | Ubuntu-Latest | Macos-Latest |
+| ------------- |-------------| ----- |----- |
+| Azure |  |  |  |
+| GitHub |  |  |  |
+
+
+Table 2: Git Pricing
 
 | Git Repo      |Free Available | Pricing url  |
 | ------------- |:-------------:| ----- |
