@@ -12,8 +12,7 @@ namespace GitPipelines.Interfaces
         /// </summary>
         private static readonly ISerializer YamlSerializer = new SerializerBuilder()
             .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
-            .Build()
-            ;
+            .Build();
 
         /// <summary>
         /// Converts Pipeline interface/object into executable YAML.
