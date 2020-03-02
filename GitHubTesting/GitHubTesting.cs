@@ -39,6 +39,7 @@ namespace PipelinesTesting
             pipeline.Jobs.Add("Build", build);
             
             var github = pipeline.GitHubPipeline();
+            github.name = "dotnetcore";
             var f = github.jobs["Build"];
             f.needs.Add("Restore");
             var os = new List<string>();

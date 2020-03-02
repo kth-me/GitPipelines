@@ -10,7 +10,7 @@ namespace GitPipelines.Constructors
     /// </summary>
     public class GitHubPipeline : IPipeline
     {
-        string name;
+        public string name;
         List<ITrigger> on { get; set; }
          
         public Dictionary<string, GitHubJob> jobs { get; set; }
