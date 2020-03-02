@@ -1,9 +1,9 @@
 ﻿
-namespace GitPipelines.Interface
-{
-    using Newtonsoft.Json;
-    using YamlDotNet.Serialization;
+using Newtonsoft.Json;
+using YamlDotNet.Serialization;
 
+namespace GitPipelines.Interfaces
+{
     public static class PipelineExtension
     {
         /// <summary>

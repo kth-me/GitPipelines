@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using GitPipelines.Interfaces;
 
-namespace GitPipelines.Job
+namespace GitPipelines.Jobs
 {
     public class BitBucketJob : IJob
     {

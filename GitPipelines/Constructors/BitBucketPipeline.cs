@@ -1,10 +1,9 @@
 ﻿
-namespace GitPipelines
-{
-    using GitPipelines.Interface;
-    using GitPipelines.Job;
-    using System.Collections.Generic;
+using System.Collections.Generic;
+using GitPipelines.Interfaces;
 
+namespace GitPipelines.Constructors
+{
     /// <summary>
     /// Class that is used to define how bitbucket handles their pipelines.
     /// </summary>

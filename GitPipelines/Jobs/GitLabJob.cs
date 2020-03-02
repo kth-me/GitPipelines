@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
-namespace GitPipelines.Job
+using GitPipelines.Interfaces;
+
+namespace GitPipelines.Jobs
 {
     public class GitLabJob : IJob
     {

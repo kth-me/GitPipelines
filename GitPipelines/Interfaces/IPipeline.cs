@@ -1,11 +1,8 @@
 ﻿
+using System.Collections.Generic;
 
-
-namespace GitPipelines.Interface
+namespace GitPipelines.Interfaces
 {
-    using GitPipelines.Job;
-    using System.Collections.Generic;
-
     /// <summary>
     /// Interface of pipelines defining how data is stored
     /// </summary>

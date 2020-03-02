@@ -1,23 +1,22 @@
 ﻿
+using GitPipelines.Constructors;
+using GitPipelines.Interfaces;
+
 namespace GitPipelines
 {
-    using GitPipelines.Interface;
-    using GitPipelines.Job;
     using System.Collections.Generic;
+
 
     public class Pipeline : IPipeline
     {
-        public enum Triggers
-        {
-            Commit,
-            Fork,
-            Pull,
-            Push            
-        }
-
-        public List<Triggers> triggers { get; set; }
+        public List<ITrigger> Triggers { get; set; }
         public Dictionary<string, IJob> Jobs { get; set; }
-        public Pipeline() { }
+
+        public Pipeline()
+        {
+            Jobs = new Dictionary<string, IJob>();
+            Triggers = new List<ITrigger>();
+        }
 
         public AzurePipeline AzurePipeline() { return new AzurePipeline(this); }
         public BitBucketPipeline BitBucketPipeline() { return new BitBucketPipeline(this); }

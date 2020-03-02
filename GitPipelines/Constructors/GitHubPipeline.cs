@@ -1,10 +1,10 @@
 ﻿
-namespace GitPipelines
-{
-    using GitPipelines.Interface;
-    using GitPipelines.Job;
-    using System.Collections.Generic;
+using System.Collections.Generic;
+using GitPipelines.Interfaces;
+using GitPipelines.Jobs;
 
+namespace GitPipelines.Constructors
+{
     /// <summary>
     /// Class that is used to define how GitHub handles their pipelines.
     /// </summary>
@@ -18,7 +18,7 @@ namespace GitPipelines
 
         public GitHubPipeline(Pipeline pipeline)
         {
-            
+            Jobs = new Dictionary<string, IJob>();
 
             foreach (var job in pipeline.Jobs)
             {

@@ -1,11 +1,10 @@
 ﻿
 
-namespace GitPipelines
-{
-    using System.Collections.Generic;
-    using GitPipelines.Interface;
-    using GitPipelines.Job;
+using System.Collections.Generic;
+using GitPipelines.Interfaces;
 
+namespace GitPipelines.Constructors
+{
     /// <summary>
     /// Class that is used to define how GitLab handles their pipelines.
     /// </summary>
