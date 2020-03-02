@@ -13,16 +13,19 @@ namespace GitPipelines.Constructors
         string name;
         List<ITrigger> on { get; set; }
          
-        public Dictionary<string, IJob> Jobs { get; set; }
+        public Dictionary<string, GitHubJob> jobs { get; set; }
+        public Dictionary<string, string> env;
 
 
         public GitHubPipeline(Pipeline pipeline)
         {
-            Jobs = new Dictionary<string, IJob>();
+            name = pipeline.name;
+            jobs = new Dictionary<string, GitHubJob>();
+            env = pipeline.environmentVariables;
 
             foreach (var job in pipeline.Jobs)
             {
-                Jobs.Add(job.Key,new GitHubJob(job.Value));
+                jobs.Add(job.Key,new GitHubJob(job.Value));
             }
         }        
     }

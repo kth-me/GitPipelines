@@ -8,7 +8,6 @@ namespace GitPipelines.Interfaces
     /// </summary>
     public interface IPipeline
     {
-        Dictionary<string, IJob> Jobs { get; set; }
 
     }
 }

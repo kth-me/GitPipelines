@@ -1,4 +1,7 @@
 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace PipelinesTesting
 {
     using System;
@@ -17,9 +20,25 @@ namespace PipelinesTesting
         public void Test1()
         {
             var pipeline = new Pipeline();
-            pipeline.Jobs.Add("Build", new Job{});
-            Console.WriteLine(pipeline.GitHubPipeline().ToYaml());
-            Console.WriteLine(pipeline.GitHubPipeline().ToJson());
+            pipeline.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${ { secrets.GITHUB_PACKAGES_TOKEN } }");
+            pipeline.environmentVariables.Add("GITHUB_PACKAGES_USER", "${ { secrets.GITHUB_PACKAGES_USER } }");
+            var job = new Job
+            {
+                Image = "${{ matrix.os }}"
+            };
+            job.environmentVariables.Add("GITHUB_PACKAGES_TOKEN", "${ { secrets.GITHUB_PACKAGES_TOKEN } }");
+            job.environmentVariables.Add("GITHUB_PACKAGES_USER", "${ { secrets.GITHUB_PACKAGES_USER } }");
+            pipeline.Jobs.Add("Build", job);
+            var github = pipeline.GitHubPipeline();
+            var f = github.jobs.First();
+            var os = new List<string>();
+            os.Add("ubuntu-latest");
+            os.Add("windows-latest");
+            os.Add("macos-latest");
+            f.Value.strategy.matrix.Add("os",os);
+
+            Console.WriteLine(github.ToYaml());
+            Console.WriteLine(github.ToJson());
         }
     }
 }
