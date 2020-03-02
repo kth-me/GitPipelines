@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: 
+      - "GP-*"
 env: 
   GITHUB_PACKAGES_TOKEN : ${{ secrets.GITHUB_PACKAGES_TOKEN }}
   GITHUB_PACKAGES_USER : ${{ secrets.GITHUB_PACKAGES_USER }}
@@ -27,6 +30,7 @@ jobs:
       working-directory: ${{ matrix.test }}
       run:  dotnet test
   build_and_deploy:
+    if: contains("master", ${GITHUB_REF##*/})
     needs: [build_and_test]
     runs-on: ubuntu-latest
     steps:
