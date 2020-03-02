@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        test: [PipelinesTesting]
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -22,6 +23,8 @@ jobs:
       run: |
         dotnet restore --configfile nuget.config
         dotnet build --configuration Release
+    - name: Run Test
+      working-directory: ${{ matrix.test }}
         dotnet test
   build_and_deploy:
     needs: [build_and_test]
