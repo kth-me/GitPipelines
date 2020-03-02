@@ -31,7 +31,7 @@ jobs:
       working-directory: ${{ matrix.test }}
       run:  dotnet test
   build_and_deploy:
-    if: contains("master", ${GITHUB_REF##*/})
+    if: contains(master, ${GITHUB_REF##*/})
     needs: [build_and_test]
     runs-on: ubuntu-latest
     steps:
