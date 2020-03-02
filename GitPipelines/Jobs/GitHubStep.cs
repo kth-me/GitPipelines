@@ -21,6 +21,7 @@ namespace GitPipelines.Jobs
         /// <summary>
         /// Special multi-line formatting.
         /// Uses has to be null if this isn't.
+        /// TODO Needs to use | on multi-line
         /// </summary>
         [YamlMember(Alias = "run")]
         public string Run;
