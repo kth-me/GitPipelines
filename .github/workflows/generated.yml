@@ -18,7 +18,7 @@ jobs:
         - ubuntu-latest
         - windows-latest
         - macos-latest
-    runs-on: Ubuntu-latest
+    runs-on: ${{ matrix.os }}
 env:
   GITHUB_PACKAGES_TOKEN: ${{ secrets.GITHUB_PACKAGES_TOKEN }}
   GITHUB_PACKAGES_USER: ${{ secrets.GITHUB_PACKAGES_USER }}
