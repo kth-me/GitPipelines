@@ -1,5 +1,8 @@
 name: dotnetcore
-on: [push]
+on:
+  push:
+    branches:
+    - '*'
 jobs:
   Restore:
     steps:
