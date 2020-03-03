@@ -1,10 +1,8 @@
 
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PipelinesTesting
 {
-    using System;
     using NUnit.Framework;
     using GitPipelines;
     using GitPipelines.Interfaces;
@@ -48,8 +46,9 @@ namespace PipelinesTesting
             os.Add("macos-latest");
             f.Strategy.matrix.Add("os",os);
             github.Clear();
-            Console.WriteLine(github.ToYaml());
-            Console.WriteLine(github.ToJson());
+            TestContext.WriteLine(github.ToYaml());
+            TestContext.WriteLine(github.ToJson());
+            
         }
     }
 }
