@@ -40,10 +40,12 @@ namespace PipelinesTesting
             github.Name = "dotnetcore";
             var f = github.Jobs["Build"];
             f.Needs.Add("Restore");
-            var os = new List<string>();
-            os.Add("ubuntu-latest");
-            os.Add("windows-latest");
-            os.Add("macos-latest");
+            var os = new List<string>
+            {
+                "ubuntu-latest",
+                "windows-latest",
+                "macos-latest"
+            };
             f.Strategy.matrix.Add("os",os);
             github.Clear();
             TestContext.WriteLine(github.ToYaml());
