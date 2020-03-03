@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 
@@ -11,7 +12,7 @@ namespace GitPipelines.Jobs
         /// Run has to be null if this isn't.
         /// </summary>
         [YamlMember(Alias = "uses")]
-        public string Uses;
+        public string Uses { get; set; }
 
         /// <summary>
         /// Name of the step being run.
@@ -24,8 +25,8 @@ namespace GitPipelines.Jobs
         /// Uses has to be null if this isn't.
         /// Scalar Style allows the correct formatting for github.
         /// </summary>
-        [YamlMember(Alias = "run",ScalarStyle = ScalarStyle.Literal)]
-        public string Run;
+        [YamlMember(Alias = "run", ScalarStyle = ScalarStyle.Literal)]
+        public String Run { get; set; }
 
         /// <summary>
         /// Gets and Sets Step Environment variables.
