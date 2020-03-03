@@ -1,9 +1,12 @@
 ﻿
+
+
 namespace GitPipelines.Constructors
 {
     using System.Collections.Generic;
     using GitPipelines.Interfaces;
     using GitPipelines.Jobs;
+    using GitPipelines.Triggers;
     using YamlDotNet.Serialization;
 
     /// <summary>
@@ -21,7 +24,7 @@ namespace GitPipelines.Constructors
         /// Gets and sets Pipeline Triggers
         /// </summary>
         [YamlMember(Alias = "on")]
-        public List<ITrigger> On { get; set; }
+        public GitHubTrigger On { get; set; }
 
         /// <summary>
         /// Collection of jobs in the pipelines and description
