@@ -1,48 +1,60 @@
 ﻿
 using System.Collections.Generic;
 using GitPipelines.Interfaces;
-using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
 
 namespace GitPipelines.Jobs
 {
     public class GitHubJob : IJob
     {
-        public Strategy strategy { get; set; }
+        [YamlMember(Alias = "strategy")]
+        public Strategy Strategy { get; set; }
         
         // needs to be runs-on
+        [YamlMember(Alias ="runs-on")]
         public string RunsOn { get; set; }
-        
+
         /// <summary>
         /// List of other job's by key that has to be completed before this job runs.
         /// </summary>
-        public List<string> needs { get; set; }
+        [YamlMember(Alias ="needs")]
+        public List<string> Needs { get; set; }
 
-        public Dictionary<string, string> env;
+        /// <summary>
+        /// Gets or sets local environment variable for the running job.
+        /// </summary>
+        [YamlMember(Alias = "env")]
+        public Dictionary<string, string> EnvironmentVariables;
+
+        /// <summary>
+        /// List of steps that the github job runs in the pipeline
+        /// </summary>
+        [YamlMember(Alias = "steps")]
+        public List<GitHubStep> Steps;
 
         public GitHubJob(Job value)
         {
             RunsOn = value.Image;
-            strategy = new Strategy();
-            env = value.environmentVariables;
-            needs = new List<string>();
+            Strategy = new Strategy();
+            EnvironmentVariables = value.environmentVariables;
+            Needs = new List<string>();
         }
 
         public void clear()
         {
-            if (strategy.matrix.Count == 0)
+            if (Strategy.matrix.Count == 0)
             {
-                strategy = null;
+                Strategy = null;
             }
 
-            if (needs.Count == 0)
+            if (Needs.Count == 0)
             {
-                needs = null;
+                Needs = null;
             }
 
-            if (env.Count == 0)
+            if (EnvironmentVariables.Count == 0)
             {
-                env = null;
+                EnvironmentVariables = null;
             }
         }
     }
