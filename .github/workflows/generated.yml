@@ -1,0 +1,16 @@
+name: dotnetcore
+on: [push]
+jobs:
+  Restore:
+    steps:
+    - name: restore
+      run: |-
+        dotnet restore
+        dotnet build
+    strategy:
+      matrix:
+        os:
+        - ubuntu-latest
+        - windows-latest
+        - macos-latest
+    runs-on: ubuntu-latest
