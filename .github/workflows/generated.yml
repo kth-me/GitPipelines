@@ -2,7 +2,7 @@ name: dotnetcore
 on:
   push:
     branches:
-    - '*'
+    - 'GP-*'
 jobs:
   Restore:
     steps:
