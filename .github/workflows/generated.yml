@@ -21,8 +21,7 @@ jobs:
         - ubuntu-latest
         - windows-latest
         - macos-latest
-        - alpine:3.7
-        - alpine-latest
+        - 9.3-alpine
     runs-on: ${{ matrix.os }}
 env:
   GITHUB_PACKAGES_TOKEN: ${{ secrets.GITHUB_PACKAGES_TOKEN }}
